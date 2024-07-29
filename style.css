@@ -18,7 +18,7 @@ html{
 
 body {
     background-color: rgb(41, 40, 40);
-}
+} 
 
 .header {
     z-index: 100;
@@ -191,7 +191,7 @@ body {
     }
 }
 
-section {
+.Home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,9 +199,6 @@ section {
     height: 100vh;
     color: white;
     margin-top: 90px;
-}
-
-.Home {
     background: url(images/home.jpg);
     background-size: cover;
 }
@@ -591,4 +588,156 @@ section {
     color: black;
     font-weight: 600;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.education {
+   height: calc(100%-100px);
+}
+
+.education .timeline{
+    position: relative;
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.education .heading{
+    font-size: 2rem;
+    color: cyan;
+    z-index: 100;
+    position: relative;
+    text-align: center;
+    top: 50px;
+    margin-bottom: 100px;
+}
+.education .timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(360deg, transparent, yellow, cyan);
+    animation: linedown 1.5s infinite alternate;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -2px;
+}
+
+.education .container{
+    padding: 10px 39px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+}
+
+.education .container::after{
+    content: '\f501';
+    position: absolute;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    right: -17px;
+    background-color: rgb(255, 255, 255);
+    border: 4px solid white;
+    z-index:100;
+    font-size: 1.89rem;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(90, 64, 64);
+}
+
+.education .left{
+    left: 0;
+}
+.education .right{
+    left: 50%;
+}
+
+.education .left::before{
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid rgb(90, 64, 64);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgb(90, 64, 64);
+}
+.education .right::before{
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid rgb(90, 64, 64);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgb(90, 64, 64) transparent transparent;
+}
+
+.education .right::after{
+    left: -16px;
+}
+
+.education .content{
+    color: white;
+    padding: 10px 10px;
+    background: rgb(90, 64, 64);
+    position: relative;
+    border-radius: 6px;
+}
+
+.education .right .tag{
+    font-size: 1.5rem;
+    padding-left: .1rem;
+}
+.education .left .tag{
+    font-size: 1.5rem;
+    /* padding-right: .1rem; */
+}
+
+.education .content .desc{
+    padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px){
+    .education .timeline{
+        margin-top:2rem ;
+    }
+    .education .timeline::after{
+        left: 31px;
+    }
+    .education .container{
+        width: 100%;
+        padding-left: 8rem;
+        padding-right: 2rem;
+    }
+    .education .container::before{
+        font-size: 2.2rem;
+    }
+
+    .education .container::after{
+        left: 61px;
+        border: medium solid rgb(90, 64, 64);
+        border-width: 10px 10px 10px 0;
+        border-color:transparent rgb(90, 64, 64) transparent transparent;
+    }
+    .education .left::after{
+        left: 15px;
+    }
+    .education .right::after{
+        left: 15px;
+    }
+    .education .right{
+        left: 0%;
+    }
+
+}
+    
+.education video{
+    position: absolute;
+    width: 100vw;
 }
