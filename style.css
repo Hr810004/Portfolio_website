@@ -146,7 +146,8 @@ body {
 .tabs:hover {
     color: #01dbc2;
 }
-.active-link{
+
+.active-link {
     transition: all .4s;
     color: #01dbc2;
     text-decoration: underline;
@@ -172,6 +173,7 @@ body {
 }
 
 @keyframes rainbow {
+
     100%,
     0% {
         color: rgb(243, 154, 154);
@@ -1057,7 +1059,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 0.75fr);
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     text-align: left;
     grid-gap: 15px;
     padding: 0px 60px;
@@ -1067,8 +1069,9 @@ body {
 .skill-box {
     border: 1px solid white;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 1.4rem;
     color: #ddd;
+    position: relative;
 }
 
 .skill-title {
@@ -1151,7 +1154,10 @@ body {
     display: flex;
     justify-content: flex-end;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
 }
 
 @media screen and (max-width:500px) {
@@ -1678,11 +1684,10 @@ body {
 }
 
 .scrollup:hover {
-    transition:.4s;
+    transition: .4s;
     transform: translateY(-.5rem);
 }
 
 .show-scroll {
     bottom: 5rem;
 }
-
