@@ -89,13 +89,6 @@ GrowthGenius is a digital marketing agency platform that features blogs, recent 
 Feel free to reach out for any questions, project ideas, or collaboration opportunities. Whether it’s for work, tech discussions, or just general inquiries, I am always happy to connect and discuss.
 
 ### Contact Information:
-
-- **Address**:  
-  B-106 Aaradhana Pg,  
-  Astavinayak Apartments, Pdpu road,  
-  Raysan, Gandhinagar,  
-  382007, India
-
 - **Phone**:  
   +91 9727347935
 
