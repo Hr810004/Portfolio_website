@@ -1458,214 +1458,146 @@ body {
     letter-spacing: 1px;
     font-weight: 500;
 }
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Recent Projects Section                                                  */
+/* ────────────────────────────────────────────────────────────────────────── */
 
-/* PROJECTS SECTION */
-
-.projects {
-    background: url(images/projects.jpg);
-    background-size: cover;
-    background-repeat: repeat-y;
-}
-
-.section_title {
+/* Section wrapper */
+#Projects.projects.section {
+    padding: 4rem 1rem;
+    background: url('images/projects.jpg') center/cover no-repeat;
+  }
+  
+  /* Section title */
+  #Projects .section_title {
     text-align: center;
-    font-size: 3em;
-    padding-top: 80px;
-    padding-bottom: 30px;
+    font-size: 3rem;
+    margin-bottom: 2rem;
     font-weight: 600;
-    text-shadow: 1px 1px 5px black;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, .5fr);
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-
-}
-
-.projects_card {
-    width: fit-content;
-    max-width: 440px;
-    height: max-content;
-    margin: 20px;
-    padding: 1.5rem;
-    border-radius: 2rem;
-    background: #2624245f;
-    border: 2px solid rgba(255, 255, 255, 0.399);
-    backdrop-filter: blur(6px);
-    box-shadow: 2px 2px 5px black;
-}
-
-.projects_image:hover .projects_img {
-    transform: scale(1.22);
-}
-
-.projects_image {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  }
+  
+  /* Masonry container via CSS columns */
+  .projects_container {
+    column-count: 3;
+    column-gap: 2.5rem;           /* ↑ bigger gutter between columns */
+    padding: 0 1rem;
+  }
+  
+  /* Card wrapper: inline-block so it flows into columns */
+  .projects_card {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 2rem;           /* gutter between items */
+    break-inside: avoid;
+    overflow: hidden;            /* contain enlarged children */
+    background: rgba(70, 70, 70, 0.556);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .projects_card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+  }
+  
+  /* Image container */
+  .projects_image {
+    width: 80%;
     overflow: hidden;
-    border-radius: 1.5rem;
-    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .projects_image img {
     width: 100%;
     height: auto;
-}
-
-.projects_img {
-    transition: transform .4s;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-}
-
-.projects_name {
-    color: white;
-    font-size: 25px;
-    margin-bottom: .5rem;
+    transition: transform 0.4s ease;
+  }
+  .projects_image:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Card content */
+  .projects_data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;               /* vertical spacing */
+    padding: 0 0.5rem 1rem;
+  }
+  
+  /* Title */
+  .projects_name {
     display: flex;
     align-items: center;
-    padding-top: 5px;
-    margin-top: .6rem;
-}
-
-.projects_desc {
-    color: white;
-    margin-bottom: 1.5rem;
-}
-
-.projects_skill {
-    width: 1.3rem;
-    margin-right: 5px;
-    transition: transform .4s;
-}
-
-.projects_skill:hover {
-    transform: translateY(-.25rem);
-}
-
-.projects_skills {
-    width: max-content;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.414);
-    border: 1px solid rgba(255, 255, 255, 0.297);
-    padding-inline: .75rem;
-    border-radius: 4rem;
-    display: flex;
-    align-items: center;
-    column-gap: .75rem;
-    margin-bottom: 1.5rem;
-}
-
-.projects_button {
-    color: white;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    column-gap: .5rem;
-    transition: color .4s;
-}
-
-.projects_button i {
-    font-size: 1.25rem;
-}
-
-.projects_button span {
-    font-size: 1em;
-    transition: .4s;
-}
-
-.projects_button:hover {
-    color: rgb(228, 242, 188);
-}
-
-.projects_image {
-    width: 80vw;
-    height: 50vh;
-    margin: auto;
-}
-
-.projects_image img {
-    box-shadow: 3px 3px 5px black;
-    border-radius: 1.5rem;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-}
-
-.projects_name img {
-    width: 2rem;
-    margin-right: 10px;
-}
-
-.projects_data {
-    padding: 10px;
-}
-
-@media screen and (max-width:1000px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    color: #fff;
+    z-index: 3;
+  }
+  .projects_name img {
+    height: 1.8rem;
+  }
+  
+  /* Description */
+  .projects_desc {
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Skills bar — now inline-flex + fit-content */
+  .projects_skills {
+    display: inline-flex;       /* shrink to icons only */
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    max-width: fit-content;
+  }
+  .projects_skill {
+    width: 1.6rem;
+    transition: transform 0.3s ease;
+  }
+  .projects_skill:hover {
+    transform: translateY(-2px) scale(1.1);
+  }
+  
+  /* ────────────────────────────────────────────────────────────────────────── */
+  /* Responsive Adjustments                                                   */
+  /* ────────────────────────────────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .projects_container {
+      column-count: 2;
+      column-gap: 2rem;
     }
-
-    .projects_card {
-        margin: 20px;
+  }
+  @media (max-width: 768px) {
+    .projects_container {
+      column-count: 1;
+      column-gap: 1rem;
     }
-
-    .projects_image {
-        width: 80vw;
-        height: 40vh;
-    }
-}
-
-@media screen and (max-width:600px) {
-
-    .grid {
-        grid-template-columns: repeat(1, .9fr);
-    }
-
-    .projects_card {
-        margin: 20px 0;
-        width: 100%;
-        padding: 1rem;
-    }
-
-    .projects_image {
-        width: 90vw;
-        height: auto;
-    }
-
-    .projects_img {
-        height: auto;
-    }
-
-    .projects_skills {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        height: 35px;
-        padding-inline: 0.5rem;
-    }
-
-    .projects_button span {
-        font-size: 1rem;
-    }
-}
-
-/* scroll-bar customization */
-
-::-webkit-scrollbar {
+  }
+  
+  /* ─── SCROLLBAR (optional) ─── */
+  ::-webkit-scrollbar {
     width: 5px;
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #01dbc2;
-    border-radius: .5rem;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #069f8e;
-    border-radius: .5rem;
-}
-
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #01dbc2;
+    border-radius: 0.5rem;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #069f8e;
+  }
+ 
 .scrollup {
     text-decoration: none;
     position: fixed;
@@ -1962,66 +1894,74 @@ body {
     }
   }
   
-  .projects_card {
-    background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 1.8rem;
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.08);
-    transform-style: preserve-3d;
-    transition: transform 0.3s ease;
-  }
-  
-  .projects_card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.25);
-  }
-  
-  .projects_img {
-    border-radius: 10px;
-    transition: transform 0.4s;
-  }
-  
-  .projects_image:hover .projects_img {
-    transform: scale(1.1);
-  }
-  
-  .projects_skills {
-    background-color: #141414;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .projects_skill {
-    width: 24px;
-    transition: transform 0.3s ease;
-  }
-  
-  .projects_skill:hover {
-    transform: translateY(-4px) scale(1.1);
-  }
-  
-  .projects_button {
-    display: inline-flex;
+/* ─── “small-btn” shrink-to-fit pill ─── */
+.small-btn {
+    display: inline-flex;           /* shrink to content width */
     align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    margin-top: 10px;
-    font-size: 0.95rem;
-    color: #01dbc2;
+    gap: 0.4rem;                    /* spacing icon ↔ text */
+    padding: 0.4rem 0.8rem;         /* your desired pill padding */
+    font-size: 1rem;                /* adjust up/down for bigger/smaller text */
+    line-height: 1.2;
+    color: #01dbc2;                 /* match your theme */
     border: 1px solid #01dbc2;
-    border-radius: 6px;
+    border-radius: 1rem;
     text-decoration: none;
-    transition: 0.3s;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    width: auto;
+  }
+  .small-btn:hover {
+    background: rgba(1,219,194,0.15);
+    box-shadow: 0 0 6px rgba(1,219,194,0.6);
+  }
+ /* 1) Make your Projects section the positioning context */
+#Projects.projects.section {
+    position: relative;        /* so the absolute canvas can live inside it */
+    /* …your existing padding & background… */
   }
   
-  .projects_button:hover {
-    background-color: #01dbc22a;
-    color: black !important;
-    box-shadow: 0 0 10px cyan;
+  /* 2) Stretch the particles canvas full-bleed within that section */
+  #particles-projects {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;      /* don’t block clicks */
+    z-index: 0;                /* behind cards and title */
   }
-    
+  
+  /* 3) Elevate your title & masonry above the canvas */
+  #Projects .section_title,
+  #Projects .projects_container {
+    position: relative;
+    z-index: 1;
+  }
+         /* 1) Give the image container some perspective */
+.projects_image {
+    perspective: 800px;
+    position: relative; /* so the glow doesn’t get clipped */
+    overflow: visible;
+  }
+  
+  /* 2) Smoothly transition 3D, shadow & filter */
+  .projects_image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-out,
+                box-shadow 0.4s ease-out,
+                filter 0.4s ease-out;
+  }
+  
+  /* 3) On hover: lift, tilt, brighten & add neon glow */
+  .projects_image:hover img {
+    transform: scale(1.05)
+               rotateX(4deg)
+               rotateY(-4deg)
+               translateZ(12px);
+    box-shadow:
+      0 8px 16px rgba(0, 255, 234, 0.6),
+      0 16px 32px rgba(0, 255, 234, 0.4);
+    filter: brightness(1.1) saturate(1.3);
+  }
+  

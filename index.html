@@ -335,8 +335,9 @@
   
   <div class="line"></div>
   <section id="Projects" class="projects section">
+    <div id="particles-projects"></div>
     <h3 class="section_title name">Recent Projects</h3>
-    <div class="projects_container container3 grid">
+    <div class="projects_container">
       <article class="projects_card">
         <a href="#Projects" class="projects_image">
           <img src="images/harsh810.io.png" alt="" class="projects_img" />
@@ -348,14 +349,14 @@
             skills, and contact information. Discover my work in web
             development, including projects showcasing expertise in HTML, CSS,
             JavaScript, and more. Stay updated with my latest work and connect
-            with me if any query.
+            with me if any query. 
           </p>
           <div class="projects_skills">
             <img src="images/html5.svg" alt="" class="projects_skill" style="width: 1.8rem" />
             <img src="images/css3.svg" alt="" class="projects_skill" />
             <img src="images/js.svg" alt="" class="projects_skill" />
           </div>
-          <a href="" class="projects_button" style="padding-bottom: 5px">
+          <a href="#projects" class="small-btn  " style="padding-bottom: 5px; display:none;">
             <!-- <i class='bx bx-link-alt'></i>
                         <span class="name">Visit project</span> -->
           </a>
@@ -383,9 +384,9 @@
             <img src="images/mysql.svg" alt="" class="projects_skill" style="width: 2rem" />
             <img src="images/bootstrap.svg" alt="" class="projects_skill" />
           </div>
-          <a href="https://github.com/Hr810004/Digilibrary_DBMS_project" class="projects_button">
+          <a href="https://github.com/Hr810004/Digilibrary_DBMS_project" class="small-btn">
             <i class="bx bx-link-alt"></i>
-            <span class="name">Visit project</span>
+            <span>Visit project</span>
           </a>
         </div>
       </article>
@@ -409,10 +410,10 @@
             <img src="images/php.svg" alt="" class="projects_skill" style="width: 2rem" />
             <img src="images/mysql.svg" alt="" class="projects_skill" style="width: 2rem" />
           </div>
-          <a href="https://github.com/Hr810004/Digital_Marketing_Agency" class="projects_button"
+          <a href="https://github.com/Hr810004/Digital_Marketing_Agency" class="small-btn "
             style="padding-bottom: 10px">
             <i class="bx bx-link-alt"></i>
-            <span class="name">Visit project</span>
+            <span>Visit project</span>
           </a>
         </div>
       </article>
@@ -436,8 +437,7 @@
             <img src="images/mysql.svg" class="projects_skill" />
             <img src="images/bootstrap.svg" class="projects_skill" />
           </div>
-          <a href="https://github.com/Hr810004/MoviEra" class="projects_button"><i class="bx bx-link-alt"></i><span
-              class="name">View Source</span></a>
+          <a href="https://github.com/Hr810004/MoviEra" class="small-btn  "><i class="bx bx-link-alt"></i><span>View Source</span></a>
         </div>
       </article>
       <!-- Taskfyer -->
@@ -464,8 +464,7 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
               class="projects_skill" alt="TypeScript" />
           </div>
-          <a href="https://taskfyer-tau.vercel.app" class="projects_button"><i class="bx bx-link-alt"></i><span
-              class="name">Live Demo</span></a>
+          <a href="https://taskfyer-tau.vercel.app" class="small-btn  "><i class="bx bx-link-alt"></i><span>Live Demo</span></a>
         </div>
       </article>
       <!-- Snippet Master -->
@@ -494,8 +493,7 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
               class="projects_skill" alt="TypeScript" />
           </div>
-          <a href="https://snippet-master-one.vercel.app" class="projects_button"><i class="bx bx-link-alt"></i><span
-              class="name">Live Demo</span></a>
+          <a href="https://snippet-master-one.vercel.app" class="small-btn  "><i class="bx bx-link-alt"></i><span>Live Demo</span></a>
         </div>
       </article>
       <!-- SensAI -->
@@ -520,8 +518,7 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThr7qrIazsvZwJuw-uZCtLzIjaAyVW_ZrlEQ&s"
               class="projects_skill" alt="Gemini AI">
           </div>
-          <a href="https://sens-ai-five.vercel.app" class="projects_button"><i class="bx bx-link-alt"></i><span
-              class="name">Live Demo</span></a>
+          <a href="https://sens-ai-five.vercel.app" class="small-btn  "><i class="bx bx-link-alt"></i><span>Live Demo</span></a>
         </div>
       </article>
       <!-- TeamSync -->
@@ -548,8 +545,7 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
               class="projects_skill" alt="TypeScript">
           </div>
-          <a href="https://github.com/Hr810004/TeamSync" class="projects_button"><i class="bx bx-link-alt"></i><span
-              class="name">View Source</span></a>
+          <a href="https://github.com/Hr810004/TeamSync" class="small-btn "><i class="bx bx-link-alt"></i><span>View Source</span></a>
         </div>
       </article>
     </div>
@@ -888,7 +884,96 @@
     scale: 1.02,
   });
 </script>
+<script>
+  particlesJS('particles-projects', {
+    particles: {
+      number: { value: 100, density: { enable: true, area: 800 } },
 
+      // cycle through these colors
+      color: {
+        value: ['#00ffff', '#ff00ff', '#ffff00', '#00ff00'],
+        animation: {
+          enable: true,
+          speed: 8,
+          sync: false
+        }
+      },
+
+      shape: { type: 'circle' },
+
+      opacity: {
+        value: 0.3,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 0.5,
+          opacity_min: 0.1,
+          sync: false
+        }
+      },
+
+      size: {
+        value: 3,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 2,
+          size_min: 1,
+          sync: false
+        }
+      },
+
+      line_linked: {
+        enable: true,
+        distance: 120,
+        color: '#00ffff',
+        opacity: 0.1,
+        width: 1
+      },
+
+      move: {
+        enable: true,
+        speed: 1.2,
+        direction: 'none',
+        out_mode: 'bounce',    // bounce off edges
+        bounce: true
+      }
+    },
+
+    interactivity: {
+      detect_on: 'canvas',
+      events: {
+        onhover: {
+          enable: true,
+          mode: ['bubble', 'grab']
+        },
+        onclick: {
+          enable: true,
+          mode: 'push'
+        }
+      },
+      modes: {
+        bubble: {
+          distance: 80,
+          size: 6,
+          duration: 1,
+          opacity: 0.6
+        },
+        grab: {
+          distance: 100,
+          line_linked: { opacity: 0.3 }
+        },
+        push: {
+          particles_nb: 4
+        }
+      }
+    },
+
+    retina_detect: true
+  });
+</script>
+
+  
 </body>
 
 </html>
